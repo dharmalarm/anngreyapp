@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title" aria-label="Chose Glide Record">Chose Glide Record</h4>
+      </div>
+      <div class="panel-body">
+        <div id="glideRecords" class="record-item" ng-repeat="record in records track by $index">
+          <div ng-class="{'text-bold': record.state == 2}">
+            <span class="text-bold">Number:</span> {{record.number}}
+          </div>
+          <div>
+            <span class="text-bold">Description:</span> {{record.description}}
+            <span ng-bind-html="trustAsHTML(record.template)"></span>
+          </div>
+          <a ng-click="updateChosenRecord(record)">Choose Record</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
